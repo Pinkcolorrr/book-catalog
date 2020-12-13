@@ -1,0 +1,17 @@
+.wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+}
+
+.colors {
+  color: #f4edf6;
+  color: #f8d9d5;
+  color: #d8e2ec;
+  color: #bf4a67;
+  color: #e6567a;
+}

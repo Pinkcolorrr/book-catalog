@@ -1,0 +1,23 @@
+.authorization {
+  display: flex;
+  flex-direction: column;
+}
+
+.authorization-button {
+  width: 200px;
+  padding: 7px 0;
+  border-radius: 4px;
+  background-color: #e6567a;
+  font-weight: bold;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.authorization-button:hover {
+  background-color: #bf4a67;
+  transition: 0.2s;
+}
+
+.sing-in {
+  margin-bottom: 20px;
+}
