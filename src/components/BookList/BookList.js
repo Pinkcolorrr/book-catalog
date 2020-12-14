@@ -4,7 +4,7 @@ import Book from "./../Book/Book";
 
 let booksArr = [
   {
-    name: "Book",
+    name: "abc",
     auth: "Pushkin",
     year: 2000,
     ISBN: 228,
