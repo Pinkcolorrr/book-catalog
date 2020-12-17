@@ -13,11 +13,18 @@
   transition: 0.2s;
 }
 
+.Sign-in {
+  margin-bottom: 20px;
+}
+
 .authorization-button:hover {
   background-color: #bf4a67;
   transition: 0.2s;
 }
 
-.sing-in {
+.account-info-user {
+  text-align: center;
+  font-weight: bold;
+  font-size: 17px;
   margin-bottom: 20px;
 }

@@ -1,64 +1,100 @@
 import React from "react";
 import "./Authorization.css";
-import { RegisterPopUp, SignInPopUp } from "./../Pop-up/Pop-up";
+import RegisterForm from "./../Froms/RegisterForm";
+import SignInForm from "./../Froms/SignInForm";
+import firebase from "firebase/app";
+import "firebase/auth";
 
 class Authorization extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      signInIsOpen: false,
-      registerIsOpen: false,
+      signInIsActive: false,
+      registerIsActive: false,
+      hasUser: false,
     };
   }
 
-  toggleSignInPopup = () => {
-    this.setState({
-      signInIsOpen: !this.state.signInIsOpen,
-    });
-  };
-  toggleRegisterPopup = () => {
-    this.setState({
-      registerIsOpen: !this.state.registerIsOpen,
+  componentDidMount = () => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({
+          hasUser: true,
+        });
+      } else {
+        this.setState({
+          hasUser: false,
+        });
+      }
     });
   };
 
-  togglePopUps = () => {
-    this.toggleRegisterPopup();
-    this.toggleSignInPopup();
+  setSignInActive = () => {
+    this.setState({
+      signInIsActive: !this.state.signInIsActive,
+    });
+  };
+
+  setRegisterActive = () => {
+    this.setState({
+      registerIsActive: !this.state.registerIsActive,
+    });
+  };
+
+  toggleForms = () => {
+    this.setSignInActive();
+    this.setRegisterActive();
+  };
+
+  signOut = () => {
+    firebase.auth().signOut();
   };
 
   render() {
     return (
       <div className="authorization">
-        <div>
-          <button
-            className="sing-in authorization-button"
-            type="button"
-            onClick={this.toggleSignInPopup}
-          >
-            Sign in
-          </button>
-          <SignInPopUp
-            isOpen={this.state.signInIsOpen}
-            closePopUp={this.toggleSignInPopup}
-            togglePopUps={this.togglePopUps}
-          ></SignInPopUp>
-        </div>
+        {this.state.hasUser ? (
+          <div className="account-info">
+            <div className="account-info-user">
+              {firebase.auth().currentUser.email}
+            </div>
+            <button className="authorization-button" onClick={this.signOut}>
+              Sign Out
+            </button>
+          </div>
+        ) : (
+          <div>
+            <div className="Sign-in">
+              <button
+                className="authorization-button"
+                onClick={this.setSignInActive}
+              >
+                Sign In
+              </button>
 
-        <div>
-          <button
-            className="register authorization-button"
-            type="button"
-            onClick={this.toggleRegisterPopup}
-          >
-            Register
-          </button>
-          <RegisterPopUp
-            isOpen={this.state.registerIsOpen}
-            closePopUp={this.toggleRegisterPopup}
-            togglePopUps={this.togglePopUps}
-          ></RegisterPopUp>
-        </div>
+              {this.state.signInIsActive ? (
+                <SignInForm
+                  setActive={this.setSignInActive}
+                  toggleForms={this.toggleForms}
+                ></SignInForm>
+              ) : null}
+            </div>
+            <div className="Register">
+              <button
+                className="authorization-button"
+                onClick={this.setRegisterActive}
+              >
+                Register
+              </button>
+              {this.state.registerIsActive ? (
+                <RegisterForm
+                  setActive={this.setRegisterActive}
+                  toggleForms={this.toggleForms}
+                ></RegisterForm>
+              ) : null}
+            </div>
+          </div>
+        )}
       </div>
     );
   }
