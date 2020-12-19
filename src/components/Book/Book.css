@@ -4,14 +4,16 @@
   border-top: 1px solid #f8d9d5;
   margin-bottom: 10px;
   padding: 10px 5px;
+
+  position: relative;
 }
 .book-fields {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 
 .book-field {
-  width: 100px;
-  white-space: nowrap;
+  flex-basis: 100%;
+  text-align: center;
 }

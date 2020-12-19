@@ -81,7 +81,7 @@ class SignInForm extends React.Component {
     return (
       <PopUp
         setActive={this.props.setActive}
-        form={form}
+        content={form}
         title="Sign In"
       ></PopUp>
     );

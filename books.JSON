@@ -1,0 +1,52 @@
+{
+  "books": [
+    {
+      "isbn": "9781593275846",
+      "title": "Eloquent JavaScript, Second Edition",
+      "author": "Marijn Haverbeke",
+      "year": "2014"
+    },
+    {
+      "isbn": "9781449331818",
+      "title": "Learning JavaScript Design Patterns",
+      "author": "Addy Osmani",
+      "year": "2012"
+    },
+    {
+      "isbn": "9781449365035",
+      "title": "Speaking JavaScript",
+      "author": "Axel Rauschmayer",
+      "year": "2014"
+    },
+    {
+      "isbn": "9781491950296",
+      "title": "Programming JavaScript Applications",
+      "author": "Eric Elliott",
+      "year": "2014"
+    },
+    {
+      "isbn": "9781593277574",
+      "title": "Understanding ECMAScript 6",
+      "author": "Nicholas C. Zakas",
+      "year": "2016"
+    },
+    {
+      "isbn": "9781491904244",
+      "title": "You Don't Know JS",
+      "author": "Kyle Simpson",
+      "year": "2015"
+    },
+    {
+      "isbn": "9781449325862",
+      "title": "Git Pocket Guide",
+      "author": "Richard E. Silverman",
+      "year": "2013"
+    },
+    {
+      "isbn": "9781449337711",
+      "title": "Designing Evolvable Web APIs with ASP.NET",
+      "author": "Glenn Block, et al.",
+      "year": "2014"
+    }
+  ]
+}

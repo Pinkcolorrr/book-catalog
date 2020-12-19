@@ -14,15 +14,53 @@
 
 .book-title-list {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .book-title-list li {
-  white-space: nowrap;
-  width: 100px;
+  flex-basis: 100%;
+  text-align: center;
 }
 
 .book-list-content {
   width: 100%;
   padding: 10px 0;
+}
+
+.delet-book {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.delet-book-text {
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 20px;
+}
+
+.delet-book-btns {
+  display: flex;
+  justify-content: space-around;
+}
+
+.delet-book-btns-cancel,
+.delet-book-btns-submit {
+  width: 100px;
+}
+
+.delet-book-btns-cancel {
+  background-color: transparent;
+  border: 3px solid #e6567a;
+}
+
+.delet-book-btns-cancel:hover {
+  border-color: #bf4a67;
+}
+
+.delet-book-btns-submit {
+  background-color: #e6567a;
+}
+
+.delet-book-btns-submit:hover {
+  background-color: #bf4a67;
 }

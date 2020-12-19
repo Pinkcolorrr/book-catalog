@@ -58,7 +58,10 @@ class Authorization extends React.Component {
             <div className="account-info-user">
               {firebase.auth().currentUser.email}
             </div>
-            <button className="authorization-button" onClick={this.signOut}>
+            <button
+              className="button authorization-button"
+              onClick={this.signOut}
+            >
               Sign Out
             </button>
           </div>
@@ -66,7 +69,7 @@ class Authorization extends React.Component {
           <div>
             <div className="Sign-in">
               <button
-                className="authorization-button"
+                className="button authorization-button"
                 onClick={this.setSignInActive}
               >
                 Sign In
@@ -81,7 +84,7 @@ class Authorization extends React.Component {
             </div>
             <div className="Register">
               <button
-                className="authorization-button"
+                className="button authorization-button"
                 onClick={this.setRegisterActive}
               >
                 Register

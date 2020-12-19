@@ -5,12 +5,7 @@
 
 .authorization-button {
   width: 200px;
-  padding: 7px 0;
-  border-radius: 4px;
   background-color: #e6567a;
-  font-weight: bold;
-  text-align: center;
-  transition: 0.2s;
 }
 
 .Sign-in {
@@ -19,7 +14,6 @@
 
 .authorization-button:hover {
   background-color: #bf4a67;
-  transition: 0.2s;
 }
 
 .account-info-user {

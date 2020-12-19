@@ -81,7 +81,7 @@ class RegisterForm extends React.Component {
     return (
       <PopUp
         setActive={this.props.setActive}
-        form={form}
+        content={form}
         title="Register"
       ></PopUp>
     );

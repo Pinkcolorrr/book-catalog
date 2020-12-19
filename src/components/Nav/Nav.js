@@ -9,7 +9,7 @@ class Nav extends React.Component {
           All books
         </button>
         <button className="nav-my nav-button" type="button">
-          My books
+          Add new book
         </button>
       </nav>
     );

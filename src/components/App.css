@@ -1,7 +1,4 @@
 .wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
   height: 100%;
   width: 100%;
 
@@ -14,4 +11,16 @@
   color: #d8e2ec;
   color: #bf4a67;
   color: #e6567a;
+}
+
+.button {
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: center;
+  transition: 0.2s;
+  padding: 7px 0;
+}
+
+.button:hover {
+  transition: 0.2s;
 }
