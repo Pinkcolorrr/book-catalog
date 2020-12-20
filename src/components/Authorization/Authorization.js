@@ -1,7 +1,7 @@
 import React from "react";
 import "./Authorization.css";
-import RegisterForm from "./../Froms/RegisterForm";
-import SignInForm from "./../Froms/SignInForm";
+import RegisterForm from "./../Forms/RegisterForm";
+import SignInForm from "./../Forms/SignInForm";
 import firebase from "firebase/app";
 import "firebase/auth";
 

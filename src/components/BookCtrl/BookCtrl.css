@@ -1,14 +1,14 @@
 .book-ctrl {
   display: flex;
+
   position: absolute;
-  right: 0px;
+  right: 0;
 }
 
 .book-ctrl-btn {
   background-color: #e6567a;
-  /* border: 1px solid black; */
-  height: 23px;
-  width: 23px;
+  height: 18px;
+  width: 18px;
   border-radius: 5px;
   display: flex;
   justify-content: center;
@@ -25,15 +25,10 @@
   transition: 0.2s;
 }
 
-.book-ctrl-btn:active {
-  transform: scale(1.1);
-  transition: 0.01s;
-}
-
 .fa-times {
-  font-size: 20px;
+  font-size: 14px;
 }
 
 .fa-pen {
-  font-size: 15px;
+  font-size: 10px;
 }
