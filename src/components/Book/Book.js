@@ -18,8 +18,12 @@ class Book extends React.Component {
     this.authListener();
   }
 
+  componentWillUnmount() {
+    this.unsubscribe();
+  }
+
   authListener = () => {
-    firebase.auth().onAuthStateChanged((user) => {
+    this.unsubscribe = firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         this.setState({
           hasUser: true,

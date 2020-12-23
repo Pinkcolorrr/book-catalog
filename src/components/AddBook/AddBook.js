@@ -105,11 +105,7 @@ class AddBook extends React.Component {
               onBlur={() => this.validator.showMessageFor("isbn")}
             ></input>
             <div className="add-book-error-msg">
-              {this.validator.message(
-                "isbn",
-                this.state.isbn,
-                "required|alpha_num_dash_space"
-              )}
+              {this.validator.message("isbn", this.state.isbn, "required")}
             </div>
           </div>
 

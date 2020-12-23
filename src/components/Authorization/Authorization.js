@@ -16,7 +16,15 @@ class Authorization extends React.Component {
   }
 
   componentDidMount = () => {
-    firebase.auth().onAuthStateChanged((user) => {
+    this.authListener();
+  };
+
+  componentWillUnmount() {
+    this.unsubscribe();
+  }
+
+  authListener = () => {
+    this.unsubscribe = firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         this.setState({
           hasUser: true,

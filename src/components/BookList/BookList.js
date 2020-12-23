@@ -12,6 +12,14 @@ class BookList extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.readBookData();
+  }
+
+  componentWillUnmount() {
+    firebase.database().ref("books").off();
+  }
+
   readBookData = () => {
     firebase
       .database()
@@ -29,10 +37,6 @@ class BookList extends React.Component {
       .ref("books/" + key)
       .remove();
   };
-
-  componentDidMount() {
-    this.readBookData();
-  }
 
   render() {
     const books = [];
