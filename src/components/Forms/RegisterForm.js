@@ -50,20 +50,20 @@ class RegisterForm extends React.Component {
       <div>
         <form className="pop-up-form" onSubmit={this.register}>
           <input
-            className="pop-up-input"
+            className="pop-up-input input"
             id="email"
             placeholder="your email"
             type="text"
             onChange={this.handleChange}
           ></input>
           <input
-            className="pop-up-input"
+            className="pop-up-input input"
             id="password"
             placeholder="password"
             type="password"
             onChange={this.handleChange}
           ></input>
-          <button className="submit-btn">submit</button>
+          <button className="submit-btn button">submit</button>
         </form>
         <div className="submit-error">{this.state.errorMsg}</div>
         <div className="pop-up-switch">

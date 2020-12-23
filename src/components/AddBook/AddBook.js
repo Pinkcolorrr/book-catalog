@@ -56,7 +56,7 @@ class AddBook extends React.Component {
         <form className="add-book-form" onSubmit={this.writeBookData}>
           <div className="input-group">
             <input
-              className="add-book-input"
+              className="add-book-input input"
               id="title"
               placeholder="book title"
               onChange={this.handleChange}
@@ -64,13 +64,13 @@ class AddBook extends React.Component {
               value={this.state.title}
               onBlur={() => this.validator.showMessageFor("title")}
             ></input>
-            <div className="add-book-error-msg">
+            <div className="srv-validation-message">
               {this.validator.message("title", this.state.title, "required")}
             </div>
           </div>
           <div className="input-group">
             <input
-              className="add-book-input"
+              className="add-book-input input"
               id="authors"
               placeholder="authors"
               onChange={this.handleChange}
@@ -81,7 +81,7 @@ class AddBook extends React.Component {
 
           <div className="input-group">
             <input
-              className="add-book-input"
+              className="add-book-input input"
               id="year"
               placeholder="year"
               onChange={this.handleChange}
@@ -89,14 +89,14 @@ class AddBook extends React.Component {
               value={this.state.year}
               onBlur={() => this.validator.showMessageFor("year")}
             ></input>
-            <div className="add-book-error-msg">
+            <div className="srv-validation-message">
               {this.validator.message("year", this.state.year, "integer")}
             </div>
           </div>
 
           <div className="input-group">
             <input
-              className="add-book-input"
+              className="add-book-input input"
               id="isbn"
               placeholder="isbn"
               onChange={this.handleChange}
@@ -104,7 +104,7 @@ class AddBook extends React.Component {
               value={this.state.isbn}
               onBlur={() => this.validator.showMessageFor("isbn")}
             ></input>
-            <div className="add-book-error-msg">
+            <div className="srv-validation-message">
               {this.validator.message("isbn", this.state.isbn, "required")}
             </div>
           </div>

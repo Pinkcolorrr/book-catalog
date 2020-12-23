@@ -19,8 +19,25 @@
   text-align: center;
   transition: 0.2s;
   padding: 7px 0;
+  background-color: #e6567a;
 }
 
 .button:hover {
   transition: 0.2s;
+  background-color: #bf4a67;
+}
+
+.input {
+  font-size: 15px;
+  padding: 5px;
+  border-bottom: 3px solid black;
+  transition: 0.2s;
+  width: 100%;
+
+  outline: none;
+}
+
+.input:focus {
+  transition: 0.2s;
+  border-bottom: 3px solid #f8d9d5;
 }

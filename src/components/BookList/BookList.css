@@ -55,12 +55,5 @@
 
 .delet-book-btns-cancel:hover {
   border-color: #bf4a67;
-}
-
-.delet-book-btns-submit {
-  background-color: #e6567a;
-}
-
-.delet-book-btns-submit:hover {
-  background-color: #bf4a67;
+  background-color: transparent;
 }

@@ -16,35 +16,17 @@
 }
 
 .add-book-input {
-  font-size: 15px;
-  padding: 5px;
-  border-bottom: 2px solid black;
-  transition: 0.2s;
-  width: 100%;
-  background-color: #ffffff;
-
   margin-bottom: 10px;
-  outline: none;
-}
-
-.add-book-input:focus {
-  transition: 0.2s;
-  border-bottom: 2px solid #e6567a;
 }
 
 .add-book-button {
-  background-color: #e6567a;
   width: 200px;
   margin-top: 30px;
   align-self: flex-end;
+  padding: 10px;
 }
 
-.add-book-button:hover {
-  background-color: #bf4a67;
-  transition: 0.2s;
-}
-
-.add-book-error-msg {
+.srv-validation-message {
   color: #e6567a;
   font-weight: 600;
 }
