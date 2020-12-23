@@ -12,15 +12,6 @@ class BookList extends React.Component {
     };
   }
 
-  writeBookData(ISBN, bookName, year, authors) {
-    firebase.database().ref("books/").push({
-      name: bookName,
-      year: year,
-      ISBN: ISBN,
-      authors: authors,
-    });
-  }
-
   readBookData = () => {
     firebase
       .database()
@@ -39,9 +30,9 @@ class BookList extends React.Component {
       .remove();
   };
 
-  componentDidMount = () => {
+  componentDidMount() {
     this.readBookData();
-  };
+  }
 
   render() {
     const books = [];

@@ -7,12 +7,19 @@
 }
 
 .nav-button {
-  background-color: transparent;
   font-weight: 600;
   font-size: 17px;
-  padding: 0 10px;
   border-bottom: 4px solid transparent;
   transform: translateY(2px);
+  color: black;
+  padding: 0 10px;
+
+  display: flex;
+  align-items: center;
+}
+
+.nav-active {
+  border-bottom: 4px solid #e6567a;
 }
 
 .nav-button:hover {

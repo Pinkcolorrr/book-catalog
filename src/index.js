@@ -5,6 +5,10 @@ import ReactDOM from "react-dom";
 import App from "./components/App";
 import firebase from "firebase/app";
 import "firebase/database";
+import { Router } from "react-router-dom";
+import { createBrowserHistory } from "history";
+
+const history = createBrowserHistory();
 
 const firebaseConfig = {
   apiKey: "AIzaSyA039CBnh0-nrgUBFXg8pRdQ-0pr5sxUIk",
@@ -18,4 +22,9 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-ReactDOM.render(<App></App>, document.querySelector("#root"));
+ReactDOM.render(
+  <Router history={history}>
+    <App history={history}></App>
+  </Router>,
+  document.querySelector("#root")
+);

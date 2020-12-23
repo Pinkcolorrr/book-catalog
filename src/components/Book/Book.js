@@ -1,9 +1,9 @@
 import "./Book.css";
 import React from "react";
-import firebase from "firebase/app";
-import "firebase/auth";
 import BookCtrl from "./../BookCtrl/BookCtrl";
 import PopUp from "./../Pop-up/Pop-up";
+import firebase from "firebase/app";
+import "firebase/auth";
 
 class Book extends React.Component {
   constructor(props) {
@@ -15,6 +15,10 @@ class Book extends React.Component {
   }
 
   componentDidMount() {
+    this.authListener();
+  }
+
+  authListener = () => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         this.setState({
@@ -26,7 +30,7 @@ class Book extends React.Component {
         });
       }
     });
-  }
+  };
 
   setActive = () => {
     this.setState({ isPopUpActive: !this.state.isPopUpActive });
@@ -76,7 +80,7 @@ class Book extends React.Component {
             <span className="book-field-text">{book.title}</span>
           </li>
           <li className="book-field">
-            <span className="book-field-text">{book.author}</span>{" "}
+            <span className="book-field-text">{book.authors}</span>{" "}
           </li>
           <li className="book-field">
             <span>{book.year}</span>{" "}

@@ -3,11 +3,11 @@ import React from "react";
 import Menu from "./Menu/Menu";
 import Content from "./Content/Content";
 
-function App() {
+function App(props) {
   return (
     <div className="wrapper">
       <Menu></Menu>
-      <Content></Content>
+      <Content history={props.history}></Content>
     </div>
   );
 }

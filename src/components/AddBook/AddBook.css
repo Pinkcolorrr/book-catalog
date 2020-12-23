@@ -1,0 +1,49 @@
+.add-book {
+  padding: 50px 0;
+}
+
+.add-book-form {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border: 1px solid black;
+  padding: 80px 150px;
+}
+
+.input-group {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.add-book-input {
+  font-size: 15px;
+  padding: 5px;
+  border-bottom: 2px solid black;
+  transition: 0.2s;
+  width: 100%;
+  background-color: #ffffff;
+
+  margin-bottom: 10px;
+  outline: none;
+}
+
+.add-book-input:focus {
+  transition: 0.2s;
+  border-bottom: 2px solid #e6567a;
+}
+
+.add-book-button {
+  background-color: #e6567a;
+  width: 200px;
+  margin-top: 30px;
+  align-self: flex-end;
+}
+
+.add-book-button:hover {
+  background-color: #bf4a67;
+  transition: 0.2s;
+}
+
+.add-book-error-msg {
+  color: #e6567a;
+}
