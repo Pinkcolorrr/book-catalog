@@ -54,15 +54,6 @@ class BookList extends React.Component {
 
     return (
       <div className="book-list">
-        <div className="book-list-title">
-          <ul className="book-title-list">
-            <li>Name</li>
-            <li>Authors</li>
-            <li>Year</li>
-            <li>ISBN</li>
-          </ul>
-        </div>
-
         <ul className="book-list-content">{books}</ul>
       </div>
     );

@@ -55,6 +55,7 @@ class AddBook extends React.Component {
       <div className="add-book">
         <form className="add-book-form" onSubmit={this.writeBookData}>
           <div className="input-group">
+            <div className="add-book-form-title">Add book</div>
             <input
               className="add-book-input input"
               id="title"
@@ -112,7 +113,6 @@ class AddBook extends React.Component {
           <button className="button add-book-button" type="submit">
             Submit
           </button>
-          <div>{this.state.errorMsg}</div>
         </form>
       </div>
     );

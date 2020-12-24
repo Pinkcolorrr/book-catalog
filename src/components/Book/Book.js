@@ -46,7 +46,7 @@ class Book extends React.Component {
     const elem = (
       <div className="delet-book">
         <div className="delet-book-text">
-          Are you sure you want to delete{" "}
+          Are you sure you want to delete
           <span className="delet-book-text-title">"{book.title}"</span>?
         </div>
         <div className="delet-book-btns">
@@ -92,8 +92,13 @@ class Book extends React.Component {
           <li className="book-field">
             <span className="book-field-text">{book.isbn}</span>{" "}
           </li>
-          {this.state.hasUser ? (
-            <BookCtrl setActive={this.setActive}></BookCtrl>
+
+          {this.props.bookKey ? (
+            <BookCtrl
+              setActive={this.setActive}
+              book={this.props.book}
+              bookKey={this.props.bookKey}
+            ></BookCtrl>
           ) : null}
         </ul>
       </div>
