@@ -2,6 +2,7 @@ import React from "react";
 import "./BookContent.css";
 import BookList from "./../BookList/BookList";
 import ChangeBook from "./../ChangeBook/ChangeBook";
+import PrivateRoute from "./../PrivateRoute/PrivateRoute";
 import { Route, Switch } from "react-router-dom";
 
 function BookContent(props) {
@@ -18,7 +19,11 @@ function BookContent(props) {
 
       <Switch>
         <Route exact path="/home" component={BookList}></Route>
-        <Route path="/home/:book" component={ChangeBook}></Route>
+
+        <PrivateRoute
+          path="/home/changebook/:book"
+          component={ChangeBook}
+        ></PrivateRoute>
       </Switch>
     </div>
   );

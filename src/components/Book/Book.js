@@ -2,8 +2,6 @@ import "./Book.css";
 import React from "react";
 import BookCtrl from "./../BookCtrl/BookCtrl";
 import PopUp from "./../Pop-up/Pop-up";
-import firebase from "firebase/app";
-import "firebase/auth";
 
 class Book extends React.Component {
   constructor(props) {
@@ -13,28 +11,6 @@ class Book extends React.Component {
       isPopUpActive: false,
     };
   }
-
-  componentDidMount() {
-    this.authListener();
-  }
-
-  componentWillUnmount() {
-    this.unsubscribe();
-  }
-
-  authListener = () => {
-    this.unsubscribe = firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        this.setState({
-          hasUser: true,
-        });
-      } else {
-        this.setState({
-          hasUser: false,
-        });
-      }
-    });
-  };
 
   setActive = () => {
     this.setState({ isPopUpActive: !this.state.isPopUpActive });
@@ -47,7 +23,7 @@ class Book extends React.Component {
       <div className="delet-book">
         <div className="delet-book-text">
           Are you sure you want to delete
-          <span className="delet-book-text-title">"{book.title}"</span>?
+          <span className="delet-book-text-title"> "{book.title}"</span>?
         </div>
         <div className="delet-book-btns">
           <button

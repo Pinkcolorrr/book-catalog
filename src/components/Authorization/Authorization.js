@@ -4,6 +4,7 @@ import RegisterForm from "./../Forms/RegisterForm";
 import SignInForm from "./../Forms/SignInForm";
 import firebase from "firebase/app";
 import "firebase/auth";
+import { UserContext } from "./../UserContext";
 
 class Authorization extends React.Component {
   constructor(props) {
@@ -11,31 +12,10 @@ class Authorization extends React.Component {
     this.state = {
       signInIsActive: false,
       registerIsActive: false,
-      hasUser: false,
     };
   }
 
-  componentDidMount = () => {
-    this.authListener();
-  };
-
-  componentWillUnmount() {
-    this.unsubscribe();
-  }
-
-  authListener = () => {
-    this.unsubscribe = firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        this.setState({
-          hasUser: true,
-        });
-      } else {
-        this.setState({
-          hasUser: false,
-        });
-      }
-    });
-  };
+  static contextType = UserContext;
 
   setSignInActive = () => {
     this.setState({
@@ -61,7 +41,7 @@ class Authorization extends React.Component {
   render() {
     return (
       <div className="authorization">
-        {this.state.hasUser ? (
+        {this.context ? (
           <div className="account-info">
             <div className="account-info-user">
               {firebase.auth().currentUser.email}
