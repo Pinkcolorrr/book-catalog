@@ -41,7 +41,7 @@ class App extends React.Component {
       <UserContext.Provider value={this.state.hasUser}>
         <div className="wrapper">
           <Menu></Menu>
-          <Content history={this.props.history}></Content>
+          <Content></Content>
         </div>
       </UserContext.Provider>
     );

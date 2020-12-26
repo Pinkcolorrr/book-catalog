@@ -5,7 +5,6 @@ import firebase from "firebase/app";
 import "firebase/database";
 import { Redirect } from "react-router-dom";
 import SimpleReactValidator from "simple-react-validator";
-import isbn from "isbn-validate";
 
 class ChangeBook extends React.Component {
   constructor(props) {
@@ -21,28 +20,21 @@ class ChangeBook extends React.Component {
     };
 
     this.validator = new SimpleReactValidator({ autoForceUpdate: this });
-
-    this.isbnValidator = new SimpleReactValidator({
-      validators: {
-        isbn: {
-          message: "Invalid isbn",
-          rule: (val) => {
-            return isbn.Validate(val);
-          },
-          required: true,
-        },
-      },
-    });
   }
 
   componentDidMount() {
     this.getBook(this.state.bookId);
+    document.title = "Change book";
+  }
+
+  componentWillUnmount() {
+    document.title = "Book catalog";
   }
 
   ChangeBook = (e) => {
     e.preventDefault();
 
-    if (this.validator.allValid() && this.isbnValidator.allValid()) {
+    if (this.validator.allValid()) {
       firebase
         .database()
         .ref("books/" + this.state.bookId)
@@ -63,7 +55,6 @@ class ChangeBook extends React.Component {
         });
     } else {
       this.validator.showMessages();
-      this.isbnValidator.showMessages();
     }
   };
 
@@ -144,10 +135,14 @@ class ChangeBook extends React.Component {
               id="isbn"
               value={this.state.isbn}
               onChange={this.handleChange}
-              onBlur={() => this.isbnValidator.showMessageFor("isbn")}
+              onBlur={() => this.validator.showMessageFor("isbn")}
             ></input>
             <div className="srv-validation-message">
-              {this.isbnValidator.message("isbn", this.state.isbn, "isbn")}
+              {this.validator.message(
+                "isbn",
+                this.state.isbn,
+                "required|integer"
+              )}
             </div>
           </div>
 

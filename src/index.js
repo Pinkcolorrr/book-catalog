@@ -24,7 +24,7 @@ firebase.initializeApp(firebaseConfig);
 
 ReactDOM.render(
   <Router history={history}>
-    <App history={history}></App>
+    <App></App>
   </Router>,
   document.querySelector("#root")
 );
