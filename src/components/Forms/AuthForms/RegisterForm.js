@@ -1,6 +1,6 @@
 import React from "react";
-import PopUp from "../Pop-up/Pop-up";
-import "./Form.css";
+import PopUp from "../../Pop-up/Pop-up";
+import "./AuthForm.css";
 import firebase from "firebase/app";
 import "firebase/auth";
 
